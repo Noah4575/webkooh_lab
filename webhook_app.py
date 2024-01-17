@@ -12,9 +12,11 @@ def staging():
     if ref == 'refs/heads/staging':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['./staging_script.sh'])
+        subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True])
+        print("Staging script executed")
         return 'OK', 200
     else:
+        print("Staging script skipped")
         return 'Skip',200
     
 @app.route('/deploy', methods=['POST'])
@@ -27,9 +29,11 @@ def deploy():
     if ref == 'refs/heads/deploy':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['./deploy_script.sh'])
+        subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True])
+        print("Deploy script executed")
         return 'OK', 200
     else:
+        print("Deploy script skipped")
         return 'Skip',200
     
 if __name__ == '__main__':
