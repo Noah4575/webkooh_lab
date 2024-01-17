@@ -13,6 +13,7 @@ def staging():
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
+        print(payload)
         print("Staging Hook Triggered")
         return 'OK', 200
     else:
