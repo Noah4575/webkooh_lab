@@ -27,7 +27,6 @@ def staging():
 def deploy():
     print("Deploy endpoint accessed")
     payload = request.json
-    print("Webhook Payload:", payload)
     ref = payload.get('ref', '')
     print("THIS IS THE REF",ref)
     # Check if the push is to the desired branch, e.g., 'refs/heads/testing'
@@ -37,9 +36,9 @@ def deploy():
         os.system("git pull")
         os.system("pip install -r ./pull_app/requirements.txt")
         print("Before running app.py")
-        os.system("python ./pull_app/app.py")
+        #os.system("python ./pull_app/app.py")
+        subprocess.run(['python', './pull_app/app.py'], check=True)
         print("After running app.py")
-        #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 400
     else:
