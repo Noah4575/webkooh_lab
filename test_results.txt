@@ -1,0 +1,8 @@
+test_add_and_read_item (__main__.TestFlaskApp.test_add_and_read_item) ... ok
+test_add_item (__main__.TestFlaskApp.test_add_item) ... ok
+test_read_page (__main__.TestFlaskApp.test_read_page) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.015s
+
+OK
