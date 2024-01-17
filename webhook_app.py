@@ -34,7 +34,9 @@ def deploy():
         # Add your code logic here
         os.system("git pull")
         os.system("pip install -r ./pull_app/requirements.txt")
+        print("Before running app.py")
         os.system("python ./pull_app/app.py")
+        print("After running app.py")
         #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 400
