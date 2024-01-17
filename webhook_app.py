@@ -39,10 +39,10 @@ def deploy():
         os.system("python ./pull_app/app.py")
         #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
-        return 'OK', 200
+        return 'OK', 400
     else: 
         print("Deploy Hook Skipped") 
-        return 'Skip',200
+        return 'Skip',400
 
 if __name__ == '__main__':
     app.run(debug=True,port=5000) 
