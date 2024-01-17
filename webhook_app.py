@@ -37,7 +37,7 @@ def deploy():
         os.system("pip install -r ./pull_app/requirements.txt")
         print("Before running app.py")
         #os.system("python ./pull_app/app.py")
-        subprocess.Popen(['python', './pull_app/app.py'], check=True)
+        subprocess.Popen(['python', './pull_app/app.py'])
         print("After running app.py")
         print("Deploy Hook Triggered")
         return 'OK', 400
