@@ -27,6 +27,7 @@ def staging():
 def deploy():
     print("Deploy endpoint accessed")
     payload = request.json
+    print("Webhook Payload:", payload)
     ref = payload.get('ref', '')
     print("THIS IS THE REF",ref)
     # Check if the push is to the desired branch, e.g., 'refs/heads/testing'
