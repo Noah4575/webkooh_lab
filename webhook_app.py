@@ -16,7 +16,7 @@ def staging():
         os.system("git pull")
         #os.system("cd ./pull_app")
         os.system("pip install -r ./pull_app/requirements.txt")
-        os.system("python -m unittest ./pull_app/test-app.py")
+        os.system("python ./pull_app/test-app.py")
 
         #subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
         print("Staging Hook Triggered")
