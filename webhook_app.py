@@ -26,7 +26,7 @@ def deploy():
     ref = payload.get('ref', '')
 
     # Check if the push is to the desired branch, e.g., 'refs/heads/testing'
-    if ref == 'refs/heads/deploy':
+    if ref == 'refs/heads/main':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
