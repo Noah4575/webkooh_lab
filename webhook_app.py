@@ -26,7 +26,7 @@ def staging():
      
 @app.route('/deploy', methods=['POST'])
 
-def deploy():   
+def deploy():
     payload = request.json
     ref = payload.get('ref', '')
 

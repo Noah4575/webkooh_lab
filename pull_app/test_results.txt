@@ -3,6 +3,6 @@ test_add_item (__main__.TestFlaskApp.test_add_item) ... ok
 test_read_page (__main__.TestFlaskApp.test_read_page) ... ok
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.012s
+Ran 3 tests in 0.014s
 
 OK
