@@ -1,5 +1,5 @@
 git pull
-cd pull-app
+cd pull_app
 pip install -r requirements.txt
-pytest test-app.py
+python -m unittest test-app.py
 

@@ -13,8 +13,10 @@ def staging():
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         subprocess.run(['./staging_script.sh'])
+        print("Staging Hook Triggered")
         return 'OK', 200
     else:
+        print("Staging Hook Skipped")
         return 'Skip',200
     
 @app.route('/deploy', methods=['POST'])
@@ -28,8 +30,10 @@ def deploy():
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         subprocess.run(['./deploy_script.sh'])
+        print("Deploy Hook Triggered")
         return 'OK', 200
     else:
+        print("Deploy Hook Skipped")
         return 'Skip',200
     
 if __name__ == '__main__':
