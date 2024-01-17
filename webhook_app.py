@@ -23,7 +23,7 @@ def staging():
     else:
         print("Staging Hook Skipped")
         return 'Skip',200
-     
+      
 @app.route('/deploy', methods=['POST'])
 
 def deploy():   
