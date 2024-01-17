@@ -1,5 +1,6 @@
 from flask import Flask, request
 import subprocess
+import os
  
 app = Flask(__name__)
 
@@ -12,7 +13,8 @@ def staging():
     if ref == 'refs/heads/staging':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
+        os.system('staging_script.sh')
+        #subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
         print("Staging Hook Triggered")
         return 'OK', 200
     else:
@@ -29,7 +31,8 @@ def deploy():
     if ref == 'refs/heads/deploy':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
+        os.system('deploy_script.sh')
+        #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 200
     else: 
