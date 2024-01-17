@@ -14,9 +14,9 @@ def staging():
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         os.system("git pull")
-        os.system("cd pull_app")
-        os.system("pip install -r requirements.txt")
-        os.system("python -m unittest test-app.py")
+        #os.system("cd ./pull_app")
+        os.system("pip install -r ./pull_app/requirements.txt")
+        os.system("python -m unittest ./pull_app/test-app.py")
 
         #subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
         print("Staging Hook Triggered")
