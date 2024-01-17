@@ -22,11 +22,14 @@ class TestFlaskApp(unittest.TestCase):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Test Item', response.data)
-
+        
+"""
 if __name__ == '__main__':
     unittest.main()
-    print("Test completed successfully")
+    print("Test completed successfully")"""
 
+if __name__ == '__main__':
+    # Create a test suite
     test_suite = unittest.TestLoader().loadTestsFromTestCase(TestFlaskApp)
 
     # Create a test runner with output to a file
