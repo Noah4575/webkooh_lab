@@ -31,7 +31,7 @@ def deploy():
     ref = payload.get('ref', '')
 
     # Check if the push is to the desired branch, e.g., 'refs/heads/testing'
-    if ref == 'refs/heads/deploy':
+    if ref == 'refs/heads/main':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         os.system("git pull")
@@ -43,6 +43,6 @@ def deploy():
     else: 
         print("Deploy Hook Skipped") 
         return 'Skip',200
-    
-if __name__ == '__main__': 
+
+if __name__ == '__main__':
     app.run(debug=True,port=5000)
