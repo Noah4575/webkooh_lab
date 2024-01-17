@@ -24,4 +24,5 @@ class TestFlaskApp(unittest.TestCase):
         self.assertIn(b'Test Item', response.data)
 
 if __name__ == '__main__':
-    unittest.main() 
+    unittest.main()
+    print("Test completed successfully")
