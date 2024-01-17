@@ -24,7 +24,7 @@ def staging():
         print("Staging Hook Skipped")
         return 'Skip',200
      
-@app.route('/deploy', methods=['POST'])
+@app.route('/main', methods=['POST'])
 
 def deploy():
     payload = request.json
