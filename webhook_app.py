@@ -1,6 +1,6 @@
 from flask import Flask, request
 import subprocess
-
+ 
 app = Flask(__name__)
 
 @app.route('/staging', methods=['POST'])
@@ -19,7 +19,7 @@ def staging():
     
 @app.route('/deploy', methods=['POST'])
 
-def deploy():
+def deploy():   
     payload = request.json
     ref = payload.get('ref', '')
 
