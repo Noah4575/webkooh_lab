@@ -1,5 +1,6 @@
 from flask import Flask, request
 import subprocess
+import os
  
 app = Flask(__name__)
 
@@ -12,7 +13,11 @@ def staging():
     if ref == 'refs/heads/staging':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
+        os.system("git pull")
+        os.system("cd pull_app")
+        os.system("pip install -r ./requirements.txt")
+        os.system("-m unittest test-app.py")
+        #subprocess.run(['cmd', '/c', 'staging_script.sh'], shell=True)
         print("Staging Hook Triggered")
         return 'OK', 200
     else:
@@ -29,7 +34,11 @@ def deploy():
     if ref == 'refs/heads/deploy':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
+        os.system("git pull")
+        os.system("cd pull_app")
+        os.system("pip install -r ./requirements.txt")
+        os.system("python app.py")
+        #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 200
     else: 

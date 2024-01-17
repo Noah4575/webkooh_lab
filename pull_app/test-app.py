@@ -24,18 +24,5 @@ class TestFlaskApp(unittest.TestCase):
         self.assertIn(b'Test Item', response.data)
 
 if __name__ == '__main__':
-    # Create a test suite
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(TestFlaskApp)
-
-    # Create a test runner with output to a file
-    with open('test_results.txt', 'w') as f:
-        test_runner = unittest.TextTestRunner(stream=f, verbosity=2)
-        
-        # Run the tests and write the output to the file
-        result = test_runner.run(test_suite)
-    
-    # Check if the tests completed successfully
-    if result.wasSuccessful():
-        print("Test completed successfully")
-    else:
-        print("Test failed")
+    unittest.main()
+    print("Test completed successfully")
