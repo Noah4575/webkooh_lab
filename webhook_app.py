@@ -14,7 +14,6 @@ def staging():
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
         os.system("git pull")
-        #os.system("cd ./pull_app")
         os.system("pip install -r ./pull_app/requirements.txt")
         os.system("python ./pull_app/test-app.py")
 
@@ -35,12 +34,14 @@ def deploy():
     if ref == 'refs/heads/deploy':
         # this hook is coming from a push done to the "testing" branch
         # Add your code logic here
-        os.system('deploy_script.sh')
+        os.system("git pull")
+        os.system("pip install -r ./pull_app/requirements.txt")
+        os.system("python ./pull_app/app.py")
         #subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 200
     else: 
-        print("Deploy Hook Skipped")
+        print("Deploy Hook Skipped") 
         return 'Skip',200
     
 if __name__ == '__main__': 
