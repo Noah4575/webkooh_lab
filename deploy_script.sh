@@ -1,4 +1,4 @@
 git pull
-cd pull-app
+cd pull_app
 pip install -r requirements.txt
 python app.py
