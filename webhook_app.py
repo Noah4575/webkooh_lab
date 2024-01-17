@@ -24,7 +24,6 @@ def staging():
         return 'Skip',200
      
 @app.route('/main', methods=['POST'])
-
 def deploy():
     payload = request.json
     ref = payload.get('ref', '')
