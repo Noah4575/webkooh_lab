@@ -8,7 +8,7 @@ app = Flask(__name__)
 def staging():
     payload = request.json
     ref = payload.get('ref', '')
- 
+    print("THIS IS THE REF",ref)
     # Check if the push is to the desired branch, e.g., 'refs/heads/testing'
     if ref == 'refs/heads/staging':
         # this hook is coming from a push done to the "testing" branch
