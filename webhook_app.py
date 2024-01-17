@@ -32,7 +32,7 @@ def deploy():
         subprocess.run(['cmd', '/c', 'deploy_script.sh'], shell=True)
         print("Deploy Hook Triggered")
         return 'OK', 200
-    else:
+    else: 
         print("Deploy Hook Skipped")
         return 'Skip',200
     
